@@ -44,6 +44,8 @@ set_seed(SEED)
 tokenizer = AutoTokenizer.from_pretrained(MODEL_DIR, trust_remote_code=True, use_fast=False)
 tokenizer.pad_token_id = tokenizer.eos_token_id
 
+tokenizer.save_pretrained("dataset/qwen_tokenizer")
+
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_DIR,
     torch_dtype=torch.float16,
@@ -68,7 +70,8 @@ ds = ds.select(range(min(len(ds), DATASET_SIZE)))
 print(f'dataset size:{len(ds)}')
 
 def build_prompt(q: str) -> str:
-    return f"""You are a helpful and harmless assistant. You should think step-by-step.
+    return f"""You are a helpful and harmless assistant. 
+    You should think step-by-step.
 Question: {q.strip()}\n
 Here is your answer:\n"""
 

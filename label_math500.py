@@ -15,7 +15,7 @@ from openai import OpenAI
 
 # ─── 配置区 ──────────────────────────────────────────────────────────────────────
 DATASET_SIZE        = 500                       # 评测题目数量；None 表示整套
-PRED_PATH           = "dataset/math500_500_qwen.pt"    # torch.save 的 (ans_list, all_step_probs)
+PRED_PATH           = "dataset/math500_500_llama.pt"    # torch.save 的 (ans_list, all_step_probs)
 OUT_CSV             = f"{os.path.basename(PRED_PATH)}.csv" # 最终输出
 MODEL_NAME          = "gpt-4o"                  # GPT 模型
 TEMP                = 0

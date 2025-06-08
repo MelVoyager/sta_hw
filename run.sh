@@ -3,6 +3,8 @@
 
 # CUDA_VISIBLE_DEVICES=4,5,6,7 python inference_qwen.py
 
-CUDA_VISIBLE_DEVICES=0,1,2 python inference_llama.py
+# CUDA_VISIBLE_DEVICES=0,1,2 python inference_llama.py
 
 # CUDA_VISIBLE_DEVICES=4,5,6,7 deepspeed  inference_ds_new.py
+
+CUDA_VISIBLE_DEVICES=4,5,6,7 python get_prob.py

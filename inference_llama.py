@@ -44,6 +44,8 @@ set_seed(SEED)
 tokenizer = AutoTokenizer.from_pretrained(MODEL_DIR, trust_remote_code=True, use_fast=False)
 tokenizer.pad_token_id = tokenizer.eos_token_id
 
+tokenizer.save_pretrained("dataset/llama_tokenizer")
+
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_DIR,
     torch_dtype=torch.float16,
